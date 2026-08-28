@@ -1,0 +1,9 @@
+# Local validation artifacts
+.tmp/
+*.backup.*
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

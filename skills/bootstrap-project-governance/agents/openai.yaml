@@ -1,0 +1,7 @@
+interface:
+  display_name: "项目治理初始化"
+  short_description: "审查并生成当前或指定项目的 Codex 项目治理文件"
+  default_prompt: "Use $bootstrap-project-governance to inspect the current project and propose a project-level governance pack."
+
+policy:
+  allow_implicit_invocation: false

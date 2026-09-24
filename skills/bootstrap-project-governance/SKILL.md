@@ -37,8 +37,10 @@ Use the smallest useful inspection:
 1. Check whether the target is a Git repository and, when it is, record its root and current status without changing either.
 2. Inspect the root `AGENTS.md` or equivalent project instructions if present.
 3. Inspect the main README, root build manifests, continuous-integration configuration, obvious test entry points, and the existing `docs/` structure.
-4. Use existing documentation routing when one exists. Do not recursively load all documentation.
-5. Identify evidence for actual build, test, architecture, dependency, release, and contribution practices. Leave anything unproven as `待确认`.
+4. Use existing documentation routing when one exists. Identify the main sections for actual features and the conditions for additional reading; ordinary links do not require recursive reading.
+5. Identify evidence for actual build, test, architecture, configuration, logging, dependency, release, and contribution practices only where needed for the proposal. Leave anything unproven as `待确认`.
+6. Check for duplicated facts, stale section links, and indirect change impacts. Use the governance model's routing and maintenance criteria; do not create empty specialist documents to fill a checklist.
+7. When inspecting an already approved active task, distinguish its recorded migration state from pre-existing or external conflicts. Do not restart that task's approval process or scan unrelated worklogs.
 
 ## Present the first-pass proposal
 
@@ -59,6 +61,8 @@ Also provide:
 
 When no governance files exist, show the candidate file set and the adaptations needed. When governance files already exist, propose a merge that preserves unknown and project-specific rules. Never propose wholesale replacement merely because the candidate template is newer.
 
+The proposal should map each detailed fact to one maintained source, with feature-to-section routes and explicit impact-based reading conditions. Reuse existing documents where possible; specialized documents are optional, and missing evidence remains `待确认`. Do not backfill historical Decisions or Playbooks unless the user explicitly requests that separate scope.
+
 ## Require a separate approval
 
 After presenting the proposal, stop and wait for a new, explicit approval to write the listed files. Acknowledgement of the analysis is not approval. If the approved scope or target changes, update the proposal before writing.
@@ -72,11 +76,13 @@ When a separate approval is received:
 3. Preserve existing unknown or project-specific constraints unless the user explicitly approved their removal.
 4. Do not create `.codex/worklogs/` during initialization. The target `AGENTS.md` defines when a real task may create it and how it remains local.
 5. Do not create nested instruction files, initialize Git, stage, commit, push, or alter remotes.
+6. Place updates in their existing main sections and update routes, old names, and links together. Preserve one top-level title per current document; do not merely append another current-facts section after future proposals.
 
 ## Validate and report
 
-- Check relative links among generated governance files.
+- Check relative links and heading anchors among generated governance files, including feature routes and required reading combinations.
 - Search for unresolved template markers and unrelated project terminology.
+- Distinguish intentional `待确认` project facts and reusable template fields from unfinished editing markers. Check unique fact ownership and use executable sources for complete test or delivery inventories rather than duplicating them manually.
 - In a Git target, run `git diff --check` and review only the resulting governance diff.
-- State which checks passed, failed, or were not run.
+- State which checks passed, failed, were skipped by a test runner, or were not run; a skipped check is not a pass.
 - List every changed file and remind the user that the target project was not committed automatically.
